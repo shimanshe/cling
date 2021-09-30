@@ -18,139 +18,139 @@
         <plugins>
 
             <!-- Unit tests -->
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/AllTests.tng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<artifactId>maven-surefire-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<suiteXmlFiles>-->
+                        <!--<suiteXmlFile>src/test/AllTests.tng.xml</suiteXmlFile>-->
+                    <!--</suiteXmlFiles>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
             <!-- Source JARs -->
-            <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<artifactId>maven-source-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>attach-sources</id>-->
+                        <!--<goals>-->
+                            <!--<goal>jar</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
 
             <!-- Prepare Javadoc for distribution packaging -->
-            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>package-javadoc</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>javadoc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>package-javadoc</id>-->
+                        <!--<phase>prepare-package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>javadoc</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
 
             <!-- Generate documentation for distribution packaging -->
-            <plugin>
-                <groupId>org.fourthline.lemma</groupId>
-                <artifactId>lemma-maven-plugin</artifactId>
-                <configuration>
-                    <!-- The directories containing Java (test) sources for citation -->
-                    <sourceDirectories>
-                        <sourceDirectory>src/main/java</sourceDirectory>
-                        <sourceDirectory>src/test/java</sourceDirectory>
-                        <sourceDirectory>../demo/android/browser/src/android</sourceDirectory>
-                        <sourceDirectory>../demo/android/browser/src/main/java</sourceDirectory>
-                        <sourceDirectory>../demo/android/light/src/main/java</sourceDirectory>
-                    </sourceDirectories>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>prepare-package-manual</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>manual</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.fourthline.lemma</groupId>-->
+                <!--<artifactId>lemma-maven-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash; The directories containing Java (test) sources for citation &ndash;&gt;-->
+                    <!--<sourceDirectories>-->
+                        <!--<sourceDirectory>src/main/java</sourceDirectory>-->
+                        <!--<sourceDirectory>src/test/java</sourceDirectory>-->
+                        <!--<sourceDirectory>../demo/android/browser/src/android</sourceDirectory>-->
+                        <!--<sourceDirectory>../demo/android/browser/src/main/java</sourceDirectory>-->
+                        <!--<sourceDirectory>../demo/android/light/src/main/java</sourceDirectory>-->
+                    <!--</sourceDirectories>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>prepare-package-manual</id>-->
+                        <!--<phase>prepare-package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>manual</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
 
             <!-- Website lifecycle -->
-            <plugin>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>${maven.site.plugin.version}</version>
-                <configuration>
-                    <reportPlugins>
-                        <!-- THESE IGNORE GLOBAL PLUGIN MANAGEMENT! -->
+            <!--<plugin>-->
+                <!--<artifactId>maven-site-plugin</artifactId>-->
+                <!--<version>${maven.site.plugin.version}</version>-->
+                <!--<configuration>-->
+                    <!--<reportPlugins>-->
+                        <!--&lt;!&ndash; THESE IGNORE GLOBAL PLUGIN MANAGEMENT! &ndash;&gt;-->
 
-                        <!-- Build the manual for 'site' lifecycle -->
-                        <plugin>
-                            <groupId>org.fourthline.lemma</groupId>
-                            <artifactId>lemma-maven-plugin</artifactId>
-                            <reportSets>
-                                <reportSet>
-                                    <reports>
-                                        <report>site-manual</report>
-                                    </reports>
-                                </reportSet>
-                            </reportSets>
-                            <configuration>
-                                <!-- The directories containing Java (test) sources for citation -->
-                                <sourceDirectories>
-                                    <sourceDirectory>src/main/java</sourceDirectory>
-                                    <sourceDirectory>src/test/java</sourceDirectory>
-                                    <sourceDirectory>../demo/android/browser/src/android</sourceDirectory>
-                                    <sourceDirectory>../demo/android/browser/src/main/java</sourceDirectory>
-                                    <sourceDirectory>../demo/android/light/src/main/java</sourceDirectory>
-                                </sourceDirectories>
-                            </configuration>
-                        </plugin>
+                        <!--&lt;!&ndash; Build the manual for 'site' lifecycle &ndash;&gt;-->
+                        <!--<plugin>-->
+                            <!--<groupId>org.fourthline.lemma</groupId>-->
+                            <!--<artifactId>lemma-maven-plugin</artifactId>-->
+                            <!--<reportSets>-->
+                                <!--<reportSet>-->
+                                    <!--<reports>-->
+                                        <!--<report>site-manual</report>-->
+                                    <!--</reports>-->
+                                <!--</reportSet>-->
+                            <!--</reportSets>-->
+                            <!--<configuration>-->
+                                <!--&lt;!&ndash; The directories containing Java (test) sources for citation &ndash;&gt;-->
+                                <!--<sourceDirectories>-->
+                                    <!--<sourceDirectory>src/main/java</sourceDirectory>-->
+                                    <!--<sourceDirectory>src/test/java</sourceDirectory>-->
+                                    <!--<sourceDirectory>../demo/android/browser/src/android</sourceDirectory>-->
+                                    <!--<sourceDirectory>../demo/android/browser/src/main/java</sourceDirectory>-->
+                                    <!--<sourceDirectory>../demo/android/light/src/main/java</sourceDirectory>-->
+                                <!--</sourceDirectories>-->
+                            <!--</configuration>-->
+                        <!--</plugin>-->
 
-                        <!-- Javadoc on the website -->
-                        <plugin>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <reports>
-                                <report>javadoc</report>
-                            </reports>
-                            <configuration>
-                                <quiet>true</quiet>
-                                <detectOfflineLinks>false</detectOfflineLinks>
-                            </configuration>
-                        </plugin>
+                        <!--&lt;!&ndash; Javadoc on the website &ndash;&gt;-->
+                        <!--<plugin>-->
+                            <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                            <!--<reports>-->
+                                <!--<report>javadoc</report>-->
+                            <!--</reports>-->
+                            <!--<configuration>-->
+                                <!--<quiet>true</quiet>-->
+                                <!--<detectOfflineLinks>false</detectOfflineLinks>-->
+                            <!--</configuration>-->
+                        <!--</plugin>-->
 
-                        <!-- We want cross-referenced source code -->
-                        <plugin>
-                            <artifactId>maven-jxr-plugin</artifactId>
-                        </plugin>
+                        <!--&lt;!&ndash; We want cross-referenced source code &ndash;&gt;-->
+                        <!--<plugin>-->
+                            <!--<artifactId>maven-jxr-plugin</artifactId>-->
+                        <!--</plugin>-->
 
-                    </reportPlugins>
-                </configuration>
-            </plugin>
+                    <!--</reportPlugins>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
         </plugins>
     </build>
 
     <dependencies>
 
-        <dependency>
-            <groupId>org.seamless</groupId>
-            <artifactId>seamless-util</artifactId>
-            <version>${seamless.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seamless</groupId>
-            <artifactId>seamless-http</artifactId>
-            <version>${seamless.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seamless</groupId>
-            <artifactId>seamless-xml</artifactId>
-            <version>${seamless.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.seamless</groupId>-->
+            <!--<artifactId>seamless-util</artifactId>-->
+            <!--<version>${seamless.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.seamless</groupId>-->
+            <!--<artifactId>seamless-http</artifactId>-->
+            <!--<version>${seamless.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.seamless</groupId>-->
+            <!--<artifactId>seamless-xml</artifactId>-->
+            <!--<version>${seamless.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>

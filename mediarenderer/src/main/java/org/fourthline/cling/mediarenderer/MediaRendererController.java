@@ -15,7 +15,6 @@
 
 package org.fourthline.cling.mediarenderer;
 
-import org.gstreamer.Gst;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.mediarenderer.display.DisplayHandler;
@@ -25,17 +24,13 @@ import org.fourthline.cling.mediarenderer.gstreamer.GstMediaRenderer;
 import org.fourthline.cling.support.shared.MainController;
 import org.fourthline.cling.support.shared.TextExpandDialog;
 import org.fourthline.cling.support.shared.TextExpandEvent;
+import org.freedesktop.gstreamer.Gst;
 import org.seamless.swing.Application;
 import org.seamless.swing.DefaultEvent;
 import org.seamless.swing.DefaultEventListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
