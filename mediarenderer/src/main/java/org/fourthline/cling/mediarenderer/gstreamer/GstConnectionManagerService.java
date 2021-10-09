@@ -15,10 +15,10 @@
 
 package org.fourthline.cling.mediarenderer.gstreamer;
 
-import org.gstreamer.PluginFeature;
-import org.gstreamer.Registry;
 import org.fourthline.cling.support.connectionmanager.ConnectionManagerService;
 import org.fourthline.cling.support.model.ProtocolInfo;
+import org.freedesktop.gstreamer.PluginFeature;
+import org.freedesktop.gstreamer.Registry;
 import org.seamless.util.MimeType;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class GstConnectionManagerService extends ConnectionManagerService {
     final private static Logger log = Logger.getLogger(GstConnectionManagerService.class.getName());
 
     public GstConnectionManagerService() {
-        List<PluginFeature> types = Registry.getDefault().getPluginFeatureListByPlugin("typefindfunctions");
+        List<PluginFeature> types = Registry.get().getPluginFeatureListByPlugin("typefindfunctions");
         for (PluginFeature type : types) {
             try {
                 MimeType mt = MimeType.valueOf(type.getName());

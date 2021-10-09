@@ -37,6 +37,8 @@ public class MediaRenderer {
 
     public static void main(final String[] args) throws Exception {
 
+        System.setProperty("gstreamer.path", "E:\\gstreamer\\1.0\\mingw_x86_64\\bin");
+
         if (OS.checkForMac())
             PlatformApple.setup(APP, APPNAME);
         

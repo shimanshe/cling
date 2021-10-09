@@ -121,6 +121,7 @@ public class MediaRendererController extends MainController {
                             ? new FullscreenDisplayHandler()
                             : new WindowedDisplayHandler();
 
+                    Utils.configurePaths();
                     // Initialize the GStreamer backend (this also sets log level to WARNING for org.gstreamer)
                     Gst.init(MediaRenderer.APPNAME, args);
 

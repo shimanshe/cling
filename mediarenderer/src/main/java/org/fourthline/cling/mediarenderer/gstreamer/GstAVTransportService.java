@@ -15,24 +15,24 @@
 
 package org.fourthline.cling.mediarenderer.gstreamer;
 
-import org.gstreamer.ClockTime;
-import org.gstreamer.State;
 import org.fourthline.cling.model.ModelUtil;
 import org.fourthline.cling.model.types.ErrorCode;
 import org.fourthline.cling.model.types.UnsignedIntegerFourBytes;
 import org.fourthline.cling.support.avtransport.AVTransportErrorCode;
 import org.fourthline.cling.support.avtransport.AVTransportException;
 import org.fourthline.cling.support.avtransport.AbstractAVTransportService;
+import org.fourthline.cling.support.lastchange.LastChange;
 import org.fourthline.cling.support.model.DeviceCapabilities;
 import org.fourthline.cling.support.model.MediaInfo;
 import org.fourthline.cling.support.model.PlayMode;
 import org.fourthline.cling.support.model.PositionInfo;
 import org.fourthline.cling.support.model.SeekMode;
+import org.fourthline.cling.support.model.StorageMedium;
 import org.fourthline.cling.support.model.TransportAction;
 import org.fourthline.cling.support.model.TransportInfo;
 import org.fourthline.cling.support.model.TransportSettings;
-import org.fourthline.cling.support.model.StorageMedium;
-import org.fourthline.cling.support.lastchange.LastChange;
+import org.freedesktop.gstreamer.ClockTime;
+import org.freedesktop.gstreamer.State;
 import org.seamless.http.HttpFetch;
 import org.seamless.util.URIUtil;
 
@@ -159,13 +159,13 @@ public class GstAVTransportService extends AbstractAVTransportService {
                 throw new IllegalArgumentException();
             }
 
-            final ClockTime ct = ClockTime.fromSeconds(ModelUtil.fromTimeString(target));
-            if (player.getPipeline().getState().equals(State.PLAYING)) {
+            final long ct = ClockTime.fromSeconds(ModelUtil.fromTimeString(target));
+            if (player.getState().equals(State.PLAYING)) {
                 player.pause();
-                player.getPipeline().seek(ct);
+                player.seek(ct);
                 player.play();
-            } else if (player.getPipeline().getState().equals(State.PAUSED)) {
-                player.getPipeline().seek(ct);
+            } else if (player.getState().equals(State.PAUSED)) {
+                player.seek(ct);
             }
 
         } catch (IllegalArgumentException ex) {
