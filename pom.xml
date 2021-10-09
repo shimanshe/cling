@@ -31,7 +31,7 @@
     <modules>
         <module>core</module>
         <!--<module>demo</module>-->
-        <!--<module>workbench</module>-->
+        <module>workbench</module>
         <!--<module>website</module>-->
         <!--<module>distribution</module>-->
         <module>support</module>
